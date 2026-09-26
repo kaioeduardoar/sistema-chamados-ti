@@ -9,13 +9,14 @@ public class Chamado {
     private Usuario solicitante;
     private Tecnico tecnico;
 
-    public Chamado(int id, String titulo, String descricao, Prioridade prioridade, StatusChamado status, Usuario solicitante, Tecnico tecnico){
+    public Chamado(int id, String titulo, String descricao, Prioridade prioridade, Usuario solicitante){
         this.id = id;
         this.titulo = titulo;
         this.descricao = descricao;
         this.prioridade = prioridade;
         this.solicitante = solicitante;
         this.status = StatusChamado.ABERTO;
+
     }
     public int getId(){
         return id;
@@ -25,6 +26,12 @@ public class Chamado {
     }
     public String getDescricao(){
         return descricao;
+    }
+    public StatusChamado getStatus(){
+        return status;
+    }
+    public void setStatus(StatusChamado status){
+        this.status = status;
     }
     public Prioridade getPrioridade(){
         return prioridade;
@@ -37,7 +44,7 @@ public class Chamado {
     }
     public void atribuirTecnico(Tecnico tecnico){
         this.tecnico = tecnico;
-        this.status = StatusChamado.ABERTO;
+        this.status = StatusChamado.EM_ATENDIMENTO;
     }
     @Override
     public String toString() {
