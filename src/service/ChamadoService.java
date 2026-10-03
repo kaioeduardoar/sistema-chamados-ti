@@ -24,6 +24,14 @@
             }
             return null;
         }
+        public Chamado buscarPorUsuario(String nome){
+            for (Chamado c : chamados){
+                if(c.getSolicitante().getNome().equals(nome)){
+                    return c;
+                }
+            }
+            return null;
+        }
         public boolean alterarStatus(int id, StatusChamado novoStatus){
             Chamado chamado = buscarPorId(id);
             if(chamado == null){

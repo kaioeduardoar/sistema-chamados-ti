@@ -24,4 +24,12 @@ public class UsuarioService {
         }
         return null;
     }
+    public boolean validarUsuarioPorEmail(String email){
+        for (Usuario u : usuarios){
+            if (u.getEmail() == email){
+                return true;
+            }
+        }
+        return false;
+    }
 }
